@@ -9,7 +9,7 @@
 <title>Momodoro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 html,body{margin:0}
 img{max-width:100%}
@@ -29,7 +29,7 @@ img{max-width:100%}
   --red-wash:#fde3dc;
   --yellow:#eab52b;     /* mustard tape */
   --yellow-wash:#fbf0cc;
-  --serif:"PT Serif",Georgia,"Times New Roman",serif;
+  --serif:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --rule:1.5px;
@@ -53,9 +53,9 @@ body{color:var(--ink);font-family:var(--sans);font-size:clamp(15px,1.1vw + 10px,
 /* one 4-column grid: stuffing, cooking and goal cards share the same column widths */
 .choices{display:grid;gap:var(--rule);background:var(--ink);border:var(--rule) solid var(--ink)}
 .seg,.goals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--rule);background:var(--ink)}
-.seg button,.goal{min-height:clamp(92px,9vw,118px)}
-.seg button{flex-direction:column;justify-content:center;gap:4px;padding:8px 6px 10px;border:0;font-size:clamp(.62rem,.25vw + .56rem,.72rem);letter-spacing:.05em;line-height:1.15;text-align:center}
-.seg button svg{width:clamp(48px,5.4vw,74px);height:clamp(48px,5.4vw,74px);overflow:visible}
+.seg button,.goal{min-height:clamp(62px,5.6vw,78px)}
+.seg button{flex-direction:column;justify-content:center;gap:2px;padding:5px 4px 6px;border:0;font-size:clamp(.62rem,.25vw + .56rem,.72rem);letter-spacing:.05em;line-height:1.15;text-align:center}
+.seg button svg{width:clamp(32px,3.2vw,44px);height:clamp(32px,3.2vw,44px);overflow:visible}
 .seg button:hover{background:var(--blue-wash)}
 .seg button[aria-checked="true"]{background:var(--yellow)}
 #cookSeg button[aria-checked="true"]{background:var(--red);color:var(--white)}
@@ -88,7 +88,7 @@ body{color:var(--ink);font-family:var(--sans);font-size:clamp(15px,1.1vw + 10px,
 .stephint{margin-top:1px!important;line-height:1.3!important}
 .steps p{margin:0;font-family:var(--sans);line-height:1.4}
 .stepstage{font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-.steptitle{font-weight:600;font-size:clamp(1.05rem,.5vw + .9rem,1.25rem);color:var(--ink);letter-spacing:-.01em;line-height:1.2!important}
+.steptitle{font-family:var(--mono)!important;font-weight:700;font-size:clamp(1.05rem,.5vw + .9rem,1.25rem);color:var(--ink);letter-spacing:-.01em;line-height:1.2!important}
 .stephint{font-size:.88rem;color:var(--ink-soft)}
 .showsteps{align-self:flex-start;min-height:38px;padding:0 14px;font-size:.72rem}
 .showsteps svg{width:15px;height:15px}
@@ -164,7 +164,7 @@ button:focus-visible,.switch input:focus-visible + .track{outline:3px solid var(
 .row b{text-align:right}
 .sticker svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .sticker .txt{position:absolute;left:19%;right:19%;top:43%;bottom:19%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--white)}
-.sticker b{font-family:var(--sans);font-weight:700;letter-spacing:-.02em;font-size:clamp(1rem,1.5vw,1.3rem);line-height:.95}
+.sticker b{font-family:var(--mono);font-weight:800;letter-spacing:-.03em;font-size:clamp(1rem,1.5vw,1.3rem);line-height:.95}
 .sticker .txt span{font-family:var(--mono);font-weight:500;font-size:.44rem;letter-spacing:.04em;text-transform:uppercase;line-height:1.2;margin-top:2px}
 .sticker.yellow .txt{color:var(--ink)}
 .sticker.yellow b{font-size:clamp(.72rem,.9vw,.84rem);line-height:1.05}
@@ -182,8 +182,8 @@ button:focus-visible,.switch input:focus-visible + .track{outline:3px solid var(
 @media (max-width:760px){.goalbar{grid-template-columns:1fr}}
 .goalhead{background:var(--white);padding:clamp(14px,2vw,22px);display:flex;flex-direction:column;gap:8px;justify-content:center}
 .goalhint{margin:0;font-style:italic;color:var(--ink-soft);font-size:.92rem;line-height:1.35}
-.goal{flex-direction:column;justify-content:center;gap:2px;border:0;padding:8px 6px 10px;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;font-size:clamp(.66rem,.3vw + .58rem,.78rem)}
-.goal svg{width:100%;max-width:130px;height:auto;pointer-events:none}
+.goal{flex-direction:column;justify-content:center;gap:2px;border:0;padding:5px 4px 6px;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;font-size:clamp(.66rem,.3vw + .58rem,.78rem)}
+.goal svg{width:100%;max-width:84px;height:auto;pointer-events:none}
 .goal small{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--ink-soft);font-size:.9em}
 .goal{position:relative}
 .goal::after{content:attr(data-label);position:absolute;left:50%;top:50%;transform:translate(-50%,-40%);background:var(--red);color:var(--white);font-family:var(--mono);font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
@@ -207,6 +207,35 @@ body.goal-dragging .dropbar{transform:none;visibility:visible;transition:transfo
 .confirm b{color:var(--red)}
 .cbtns{display:flex;gap:10px;flex-wrap:wrap}
 .cbtns button{flex:1 1 150px;justify-content:center}
+.tabs{display:flex;gap:0;border:var(--rule) solid var(--ink);align-self:flex-start}
+.tabs button{min-height:40px;padding:0 16px;border:0;font-size:.72rem;gap:8px}
+.tabs button+button{border-left:var(--rule) solid var(--ink)}
+.tabs button svg{width:16px;height:16px}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--white)}
+.view{display:flex;flex-direction:column;gap:clamp(16px,2.5vw,28px)}
+.view[hidden]{display:none!important}
+.settings{display:grid!important;gap:var(--rule);background:var(--ink);border:var(--rule) solid var(--ink)}
+.settings[hidden]{display:none!important}
+.setrow{background:var(--white);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:16px;padding:clamp(14px,2vw,20px) clamp(16px,2.4vw,28px)}
+@media (max-width:640px){.setrow{grid-template-columns:1fr}}
+.setlab{display:flex;flex-direction:column;gap:2px}
+.setlab b{font-family:var(--mono);font-weight:700;letter-spacing:-.01em;font-size:clamp(.98rem,.4vw + .85rem,1.1rem);color:var(--ink)}
+.setlab small{font-family:var(--mono);font-size:.7rem;letter-spacing:.03em;color:var(--ink-soft)}
+.schemes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--rule);background:var(--ink);border:var(--rule) solid var(--ink)}
+.schemes button{border:0;flex-direction:column;gap:0;min-height:38px;padding:3px 4px;font-size:.66rem;line-height:1.2}
+.schemes button small{font-weight:400;letter-spacing:.02em;text-transform:none;font-size:.92em;color:var(--ink-soft)}
+.schemes button[aria-checked="true"]{background:var(--yellow)}
+.schemes button[data-k="custom"][aria-checked="true"]{background:var(--red);color:var(--white)}
+.schemes button[data-k="custom"][aria-checked="true"] small{color:var(--white)}
+.stepper{display:grid;grid-template-columns:52px minmax(0,1fr) auto 52px;align-items:center;border:var(--rule) solid var(--ink);justify-self:stretch;max-width:340px;width:100%}
+.stepper button{border:0;min-height:48px;padding:0;justify-content:center;font-size:1.2rem}
+.stepper button:first-child{border-right:var(--rule) solid var(--ink)}
+.stepper button:last-child{border-left:var(--rule) solid var(--ink)}
+.stepper input{border:0;background:transparent;font-family:var(--mono);font-weight:700;font-size:1.3rem;color:var(--red);text-align:right;width:100%;min-width:0;padding:0 6px;-moz-appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stepper input:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+.stepper .unit{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);padding-right:10px}
+.settings .switch{margin:0;justify-self:start}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--white);padding:12px 20px;font-family:var(--mono);font-size:.85rem;opacity:0;pointer-events:none;transition:.3s;max-width:calc(100% - 32px);text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -224,6 +253,11 @@ body.goal-dragging .dropbar{transform:none;visibility:visible;transition:transfo
 <body>
 <div class="page">
   <h1 class="vh">Momodoro</h1>
+  <nav class="tabs" role="tablist" aria-label="Momodoro">
+    <button type="button" role="tab" id="tabKitchen" aria-controls="viewKitchen" aria-selected="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9h14v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z M1 9h18 M7 6q-1-2 0-4 M13 6q-1-2 0-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Kitchen</span></button>
+    <button type="button" role="tab" id="tabSettings" aria-controls="viewSettings" aria-selected="false"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 1.5v3M10 15.5v3M1.5 10h3M15.5 10h3M4 4l2.1 2.1M13.9 13.9L16 16M4 16l2.1-2.1M13.9 6.1L16 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Settings</span></button>
+  </nav>
+  <div id="viewKitchen" role="tabpanel" aria-labelledby="tabKitchen" class="view">
 
   <section class="choices" aria-label="Customise your momo and set today's goal">
     <div class="seg" id="fillSeg" role="radiogroup" aria-label="Stuffing"></div>
@@ -244,17 +278,17 @@ body.goal-dragging .dropbar{transform:none;visibility:visible;transition:transfo
     <section class="cell ill" aria-label="Timer">
       <svg class="ring" viewBox="0 0 400 400" role="img" aria-label="Momo being made inside the timer">
         <defs><clipPath id="disc"><circle cx="200" cy="200" r="164"/></clipPath></defs>
-        <circle cx="200" cy="200" r="164" fill="#fdf8e6"/><circle cx="200" cy="200" r="164" fill="#f6e3a0" opacity=".55" filter="url(#crayonBox)"/>
-        <g id="ticks" filter="url(#wobBox)"></g>
-        <circle cx="200" cy="200" r="186" fill="none" stroke="#c9d2f5" stroke-width="12" filter="url(#pencil)"/>
-        <circle id="ringArc" filter="url(#pencil)" cx="200" cy="200" r="186" fill="none" stroke="var(--red)" stroke-width="13" transform="rotate(-90 200 200)" stroke-dasharray="1168.7" stroke-dashoffset="1168.7"/>
-        <circle id="ringArc2" filter="url(#wobBox)" cx="200" cy="200" r="181" fill="none" stroke="var(--red)" stroke-width="2" opacity=".8" transform="rotate(-91 200 200)" stroke-dasharray="1137.3" stroke-dashoffset="1137.3"/>
-        <g filter="url(#wobBox)" fill="none" stroke="var(--ink)"><circle cx="200" cy="200" r="195" stroke-width="1.6"/><circle cx="200" cy="200" r="196.5" stroke-width=".8" opacity=".5"/><circle cx="200" cy="200" r="164" stroke-width="1.6"/><circle cx="200" cy="200" r="165.5" stroke-width=".8" opacity=".5"/></g>
+        <circle cx="200" cy="200" r="164" fill="#fdf8e6"/><circle cx="200" cy="200" r="164" fill="#f6e3a0" opacity=".55" filter="url(#crayonBoxS)"/>
+        <g id="ticks" filter="url(#wobBoxS)"></g>
+        <circle cx="200" cy="200" r="186" fill="none" stroke="#c9d2f5" stroke-width="12" filter="url(#pencilS)"/>
+        <circle id="ringArc" filter="url(#pencilS)" cx="200" cy="200" r="186" fill="none" stroke="var(--red)" stroke-width="13" transform="rotate(-90 200 200)" stroke-dasharray="1168.7" stroke-dashoffset="1168.7"/>
+        <circle id="ringArc2" filter="url(#wobBoxS)" cx="200" cy="200" r="181" fill="none" stroke="var(--red)" stroke-width="2" opacity=".8" transform="rotate(-91 200 200)" stroke-dasharray="1137.3" stroke-dashoffset="1137.3"/>
+        <g filter="url(#wobBoxS)" fill="none" stroke="var(--ink)"><circle cx="200" cy="200" r="195" stroke-width="1.6"/><circle cx="200" cy="200" r="196.5" stroke-width=".8" opacity=".5"/><circle cx="200" cy="200" r="164" stroke-width="1.6"/><circle cx="200" cy="200" r="165.5" stroke-width=".8" opacity=".5"/></g>
         <g clip-path="url(#disc)">
           <svg class="paper" id="scene" x="8" y="58" width="384" height="269" viewBox="0 0 300 210" style="background:none"></svg>
         </g>
         <text x="200" y="338" text-anchor="middle" class="stepno"><tspan class="n" id="stepNum">1</tspan><tspan class="d">/25</tspan></text>
-        <g filter="url(#wobBox)"><circle id="ringDot" cx="200" cy="14" r="10" fill="var(--yellow)" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g filter="url(#wobBoxS)"><circle id="ringDot" cx="200" cy="14" r="10" fill="var(--yellow)" stroke="var(--ink)" stroke-width="1.6"/></g>
       </svg>
     </section>
 
@@ -262,7 +296,7 @@ body.goal-dragging .dropbar{transform:none;visibility:visible;transition:transfo
       <div class="controls" id="mainControls">
         <button class="play" id="startBtn"><svg viewBox="0 0 20 20" aria-hidden="true" id="playIcon"><path d="M5 3l12 7-12 7z" fill="currentColor"/></svg><span id="startLabel">Start</span></button>
         <button class="square" id="resetBtn" aria-label="Reset"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10a6 6 0 1 0 2-4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 2.5v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
-        <button class="ghost" id="breakBtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8h10v4a5 5 0 0 1-10 0z M14 9h2a2 2 0 0 1 0 4h-2" fill="none" stroke="currentColor" stroke-width="2"/></svg>5 min break</button>
+        <button class="ghost" id="breakBtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8h10v4a5 5 0 0 1-10 0z M14 9h2a2 2 0 0 1 0 4h-2" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="breakLabel">Take a break</span></button>
       </div>
       <div class="confirm" id="breakConfirm" hidden role="alertdialog" aria-labelledby="bcText">
         <p id="bcText"><b>Are you sure?</b> This may mean you're losing steam.</p>
@@ -291,35 +325,74 @@ body.goal-dragging .dropbar{transform:none;visibility:visible;transition:transfo
       </div>
     </div>
   </section>
+  </div>
+
+  <section id="viewSettings" role="tabpanel" aria-labelledby="tabSettings" class="view settings" hidden>
+    <div class="setrow">
+      <div class="setlab"><b>Scheme</b></div>
+      <div class="schemes" id="schemes" role="radiogroup" aria-label="Scheme"></div>
+    </div>
+    <div class="setrow"><label class="setlab" for="set_focus"><b>Timer length</b></label><div class="stepper" data-k="focus"><button type="button" data-d="-5" aria-label="Shorter">−</button><input type="number" id="set_focus" inputmode="numeric"><span class="unit">min</span><button type="button" data-d="5" aria-label="Longer">+</button></div></div>
+    <div class="setrow"><label class="setlab" for="set_short"><b>Short break</b></label><div class="stepper" data-k="short"><button type="button" data-d="-1" aria-label="Shorter">−</button><input type="number" id="set_short" inputmode="numeric"><span class="unit">min</span><button type="button" data-d="1" aria-label="Longer">+</button></div></div>
+    <div class="setrow"><label class="setlab" for="set_long"><b>Long break</b></label><div class="stepper" data-k="long"><button type="button" data-d="-5" aria-label="Shorter">−</button><input type="number" id="set_long" inputmode="numeric"><span class="unit">min</span><button type="button" data-d="5" aria-label="Longer">+</button></div></div>
+    <div class="setrow"><label class="setlab" for="set_every"><b>Long break every</b></label><div class="stepper" data-k="every"><button type="button" data-d="-1" aria-label="Fewer">−</button><input type="number" id="set_every" inputmode="numeric"><span class="unit">timers</span><button type="button" data-d="1" aria-label="More">+</button></div></div>
+    <div class="setrow"><span class="setlab"><b>Start the next timer on its own</b></span><label class="switch"><input type="checkbox" id="set_autoMomo"><span class="track" aria-hidden="true"></span><span class="vh">Start the next timer on its own</span></label></div>
+    <div class="setrow"><span class="setlab"><b>Start breaks on their own</b></span><label class="switch"><input type="checkbox" id="set_autoBreak"><span class="track" aria-hidden="true"></span><span class="vh">Start breaks on their own</span></label></div>
+    <div class="setrow"><span class="setlab"><b>Chime</b></span><label class="switch"><input type="checkbox" id="set_sound"><span class="track" aria-hidden="true"></span><span class="vh">Chime</span></label></div>
+  </section>
 </div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
- <filter id="wob" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur=".64s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
- <filter id="wob2" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="n"><animate attributeName="seed" values="11;12;13" dur=".54s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="G" yChannelSelector="R"/></filter>
+ <filter id="wob" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur="1.22s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
+ <filter id="wob2" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="n"><animate attributeName="seed" values="11;12;13" dur="1.03s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="G" yChannelSelector="R"/></filter>
  <filter id="crayon" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600">
   <feTurbulence type="fractalNoise" baseFrequency="0.7 0.035" numOctaves="2" seed="5" result="streak"/>
   <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.2 0 0 0 -0.95" result="mask"/>
   <feComposite in="SourceGraphic" in2="mask" operator="in" result="tex"/>
-  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"><animate attributeName="seed" values="8;9;10" dur=".6s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
+  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"><animate attributeName="seed" values="8;9;10" dur="1.14s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
   <feDisplacementMap in="tex" in2="w" scale="6" xChannelSelector="R" yChannelSelector="G"/>
  </filter>
- <filter id="wobBox"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur=".64s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
+ <filter id="wobBox"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur="1.22s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
  <filter id="pencil" x="-15%" y="-15%" width="130%" height="130%">
   <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="g"/>
   <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.6 0 0 0 -0.6" result="m"/>
   <feComposite in="SourceGraphic" in2="m" operator="in" result="t"/>
-  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur=".64s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6" dur="1.22s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
   <feDisplacementMap in="t" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
  </filter>
  <filter id="crayonBox" x="-5%" y="-5%" width="110%" height="110%">
   <feTurbulence type="fractalNoise" baseFrequency="0.6 0.03" numOctaves="2" seed="5" result="streak"/>
   <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.4 0 0 0 -0.8" result="mask"/>
   <feComposite in="SourceGraphic" in2="mask" operator="in" result="tex"/>
-  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"><animate attributeName="seed" values="8;9;10" dur=".6s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
+  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"><animate attributeName="seed" values="8;9;10" dur="1.14s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence>
   <feDisplacementMap in="tex" in2="w" scale="6" xChannelSelector="R" yChannelSelector="G"/>
  </filter>
  <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="2"/><feColorMatrix type="matrix" values="0 0 0 0 0.17  0 0 0 0 0.27  0 0 0 0 0.77  0 0 0 -1.4 0.9"/></filter>
-</defs></svg>
+
+ <filter id="wobS" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
+ <filter id="wob2S" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="G" yChannelSelector="R"/></filter>
+ <filter id="crayonS" filterUnits="userSpaceOnUse" x="-320" y="-320" width="700" height="600">
+  <feTurbulence type="fractalNoise" baseFrequency="0.7 0.035" numOctaves="2" seed="5" result="streak"/>
+  <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.2 0 0 0 -0.95" result="mask"/>
+  <feComposite in="SourceGraphic" in2="mask" operator="in" result="tex"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"></feTurbulence>
+  <feDisplacementMap in="tex" in2="w" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+ </filter>
+ <filter id="wobBoxS"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter>
+ <filter id="pencilS" x="-15%" y="-15%" width="130%" height="130%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="g"/>
+  <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.6 0 0 0 -0.6" result="m"/>
+  <feComposite in="SourceGraphic" in2="m" operator="in" result="t"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"></feTurbulence>
+  <feDisplacementMap in="t" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+ </filter>
+ <filter id="crayonBoxS" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.6 0.03" numOctaves="2" seed="5" result="streak"/>
+  <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.4 0 0 0 -0.8" result="mask"/>
+  <feComposite in="SourceGraphic" in2="mask" operator="in" result="tex"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8" result="w"></feTurbulence>
+  <feDisplacementMap in="tex" in2="w" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+ </filter></defs></svg>
 <div class="modal" id="statModal" hidden><div class="statpanel" id="statPanel" role="dialog" aria-modal="true" aria-labelledby="spTitle"></div></div>
 <div class="dropbar" id="dropBar" aria-hidden="true">Drop here to set today's goal</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -364,6 +437,10 @@ const $=id=>document.getElementById(id);
 const MIN=60000, TOTAL=25, BREAK=5;
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const dayKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const SCHEMES={classic:{name:"Classic",v:[25,5,15,4]},personal:{name:"Personal",v:[30,2,25,4]},work:{name:"Work",v:[50,10,20,2]}};
+const LIMITS={focus:[5,90],short:[1,30],long:[5,60],every:[2,8]};
+let SET=Object.assign({focus:25,short:5,long:15,every:4,autoMomo:false,autoBreak:false,sound:true,scheme:"classic"},store.get("momodoro:settings",{}));
+let minsLog=store.get("momodoro:mins",{});
 let S=store.get("momodoro:session",null)||{phase:"idle",elapsed:0,startedAt:null,fast:false};
 let days=store.get("momodoro:days",{});
 // each day holds a list of "filling:cook" momos (older saves stored a plain count)
@@ -493,7 +570,7 @@ function scene(step,phase){
     g=`<ellipse cx="140" cy="140" rx="110" ry="42" fill="var(--steel)" stroke="var(--pencil)" stroke-width="2.4"/><ellipse cx="140" cy="140" rx="84" ry="30" fill="none" stroke="var(--pencil)" stroke-width="1.2" opacity=".7"/>`+momo(130,130,1.2,11,"",C.cook)+`<ellipse cx="240" cy="160" rx="30" ry="12" fill="var(--steel)" stroke="var(--pencil)" stroke-width="2"/><ellipse cx="240" cy="157" rx="24" ry="8" fill="${chut}"/>`;
     const lvl=steamLevel;if(lvl>0)g+=steam([100,125,150].slice(0,lvl),80);
   }
-  $("scene").innerHTML=g;sketchify($("scene"),false);
+  $("scene").innerHTML=g;sketchify($("scene"),true);
 }
 function cookScene(step){
   let g="";
@@ -546,7 +623,7 @@ function pyrDots(rows,color,r0){let o="";for(let r=0;r<rows;r++){const y=118-r*1
 
 /* colored-pencil treatment: wobbly wash + streaky crayon + doubled ink outline */
 const NS="http://www.w3.org/2000/svg";
-function sketchify(svg,grain=false){
+function sketchify(svg,live=false){const grain=false;
   svg.querySelectorAll("path,rect,ellipse,circle").forEach(el=>{
     if(el.closest("[data-raw]"))return;
     const fill=el.getAttribute("fill"),stroke=el.getAttribute("stroke");
@@ -573,6 +650,7 @@ function sketchify(svg,grain=false){
       el.after(c);
     }
   });
+  if(!live)svg.querySelectorAll("[filter]").forEach(el=>{const f=el.getAttribute("filter");const m=/url\(#(\w+?)\)/.exec(f);if(m&&!m[1].endsWith("S")&&document.getElementById(m[1]+"S"))el.setAttribute("filter",`url(#${m[1]}S)`)});
   if(grain){const vb=svg.viewBox.baseVal;const gr=document.createElementNS(NS,"rect");
     gr.setAttribute("x",vb.x);gr.setAttribute("y",vb.y);gr.setAttribute("width",vb.width);gr.setAttribute("height",vb.height);
     gr.setAttribute("filter","url(#grain)");gr.setAttribute("opacity",".14");gr.setAttribute("pointer-events","none");svg.appendChild(gr)}
@@ -583,7 +661,7 @@ function drawVoid(){
   const el=$("voidArt"),r=rng(21);let d="";
   for(let row=0;row<9;row++)for(let c=0;c<40;c++){const x=c*22+(row%2)*11+(r()-.5)*4,y=16+row*20+(r()-.5)*4;d+=`<ellipse cx="${x}" cy="${y}" rx="${3.2+r()*1.6}" ry="${4.6+r()*1.8}" transform="rotate(${r()*40-20} ${x} ${y})"/>`}
   el.setAttribute("viewBox","0 0 860 190");
-  el.innerHTML=`<g fill="#ffffff" opacity=".92" filter="url(#wobBox)">${d}</g>`;
+  el.innerHTML=`<g fill="#ffffff" opacity=".92" filter="url(#wobBoxS)">${d}</g>`;
 }
 
 /* plate: porcelain, momos arranged in a spiral */
@@ -619,7 +697,7 @@ function weekSVG(arr){
 }
 function renderPlate(){
   const list=dayList(dayKey()),today=list.length;
-  $("minsToday").textContent=today*25;
+  $("minsToday").textContent=minsFor(dayKey());
   const goal=goals[dayKey()]||0;
   const plates=Math.max(1,Math.ceil(Math.max(today,goal)/CAP));
   let h="";for(let p=0;p<plates;p++)h+=plateSVG(list.slice(p*CAP,(p+1)*CAP),Math.max(0,Math.min(CAP,goal-p*CAP)),p===0&&goal&&today>=goal);
@@ -644,9 +722,13 @@ function renderPlate(){
 const unit=()=>S.fast?1000:MIN;
 function elapsed(){return S.elapsed+(S.startedAt?Date.now()-S.startedAt:0)}
 const isBreak=()=>S.phase==="break"||S.phase==="breakPaused";
-function dur(){return isBreak()?BREAK*unit():TOTAL*unit()}
+function dur(){return (isBreak()?(S.brk==="long"?SET.long:SET.short):SET.focus)*unit()}
+const minsFor=k=>minsLog[k]!=null?minsLog[k]:dayList(k).length*25;
+const nextIsLong=()=>(S.count||0)>=SET.every;
+function startBreak(){const long=nextIsLong();S={phase:"break",elapsed:0,startedAt:Date.now(),fast:S.fast,count:long?0:(S.count||0),brk:long?"long":"short"};lastStep=0;save();render()}
+function startMomo(){S={phase:"cooking",elapsed:0,startedAt:Date.now(),fast:S.fast,count:S.count||0};lastStep=0;save();render()}
 let audioCtx=null;
-function chime(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();const t=audioCtx.currentTime;[659,880,1175].forEach((f,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=f;o.type="sine";g.gain.setValueAtTime(0,t+i*.18);g.gain.linearRampToValueAtTime(.18,t+i*.18+.02);g.gain.exponentialRampToValueAtTime(.001,t+i*.18+.9);o.connect(g).connect(audioCtx.destination);o.start(t+i*.18);o.stop(t+i*.18+1)})}catch(e){}}
+function chime(){if(!SET.sound)return;try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();const t=audioCtx.currentTime;[659,880,1175].forEach((f,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=f;o.type="sine";g.gain.setValueAtTime(0,t+i*.18);g.gain.linearRampToValueAtTime(.18,t+i*.18+.02);g.gain.exponentialRampToValueAtTime(.001,t+i*.18+.9);o.connect(g).connect(audioCtx.destination);o.start(t+i*.18);o.stop(t+i*.18+1)})}catch(e){}}
 function chimeUnlock(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();audioCtx.resume&&audioCtx.resume()}catch(e){}}
 function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),3200)}
 
@@ -655,10 +737,12 @@ function tick(){
   const running=S.phase==="cooking"||S.phase==="break";
   if(running&&elapsed()>=dur()){
     if(S.phase==="cooking"){
-      if(!S.fast){const k=dayKey();days[k]=[...dayList(k),C.fill+":"+C.cook];store.set("momodoro:days",days);justAdded=true}
-      S={phase:"done",elapsed:0,startedAt:null,fast:S.fast};save();chime();
+      if(!S.fast){const k=dayKey();minsLog[k]=minsFor(k)+SET.focus;days[k]=[...dayList(k),C.fill+":"+C.cook];store.set("momodoro:days",days);store.set("momodoro:mins",minsLog);justAdded=true}
+      const cnt=(S.count||0)+1;
+      S={phase:"done",elapsed:0,startedAt:null,fast:S.fast,count:cnt};save();chime();
+      if(SET.autoBreak){renderPlate();startBreak();return}
       if(!S.fast)toast(`${FILLINGS[C.fill].name} ${COOKS[C.cook].name.toLowerCase()} momo ready. Added to your plate.`);renderPlate();
-    } else {S={phase:"idle",elapsed:0,startedAt:null,fast:S.fast};save();chime();toast("Break over. Next momo?")}
+    } else {chime();if(SET.autoMomo){startMomo();return}S={phase:"idle",elapsed:0,startedAt:null,fast:S.fast,count:S.count||0};save();toast("Break over. Next momo?")}
   }
   render();
 }
@@ -673,7 +757,7 @@ function render(){
   $("ringArc").setAttribute("stroke",brk?"var(--yellow)":"var(--red)");
   const a=frac*Math.PI*2-Math.PI/2;$("ringDot").setAttribute("cx",200+186*Math.cos(a));$("ringDot").setAttribute("cy",200+186*Math.sin(a));
 
-  let step=S.phase==="idle"?1:(S.phase==="done"||brk)?25:Math.min(TOTAL,Math.floor(e/u)+1);
+  let step=S.phase==="idle"?1:(S.phase==="done"||brk)?25:Math.min(TOTAL,Math.floor(e/(D/TOTAL))+1);
   const [stage,title,hint]=getSteps()[step-1];
   const active=S.phase==="cooking"||S.phase==="paused";
   $("stepNum").textContent=String(step);
@@ -690,7 +774,7 @@ function render(){
   const lbl={idle:"Start",cooking:"Pause",paused:"Resume",done:"Next momo",break:"Pause break",breakPaused:"Resume break"}[S.phase];
   $("startLabel").textContent=lbl;
   $("playIcon").innerHTML=(S.phase==="cooking"||S.phase==="break")?ICON.pause:ICON.play;
-  $("breakBtn").hidden=S.phase!=="done";if(S.phase!=="done"&&!$("breakConfirm").hidden)showConfirm(false);
+  $("breakBtn").hidden=S.phase!=="done";$("breakLabel").textContent=nextIsLong()?"Long break":"Short break";if(S.phase!=="done"&&!$("breakConfirm").hidden)showConfirm(false);
   $("resetBtn").setAttribute("aria-label",brk?"Skip break":"Reset");$("resetBtn").title=brk?"Skip break":"Reset";
   $("fastMode").checked=S.fast;$("fastMode").disabled=active;
   document.title="Momodoro";
@@ -698,17 +782,17 @@ function render(){
 
 $("startBtn").onclick=()=>{
   chimeUnlock();const p=S.phase;
-  if(p==="idle"||p==="done")S={phase:"cooking",elapsed:0,startedAt:Date.now(),fast:S.fast};
+  if(p==="idle"||p==="done"){startMomo();return}
   else if(p==="cooking"){S.elapsed=elapsed();S.startedAt=null;S.phase="paused"}
   else if(p==="paused"){S.startedAt=Date.now();S.phase="cooking"}
   else if(p==="break"){S.elapsed=elapsed();S.startedAt=null;S.phase="breakPaused"}
   else if(p==="breakPaused"){S.startedAt=Date.now();S.phase="break"}
   lastStep=0;save();render();
 };
-$("resetBtn").onclick=()=>{S={phase:"idle",elapsed:0,startedAt:null,fast:S.fast};lastStep=0;save();render()};
+$("resetBtn").onclick=()=>{S={phase:"idle",elapsed:0,startedAt:null,fast:S.fast,count:S.count||0};lastStep=0;save();render()};
 function showConfirm(on){$("breakConfirm").hidden=!on;$("mainControls").hidden=on;if(on)$("breakNo").focus()}
 $("breakBtn").onclick=()=>showConfirm(true);
-$("breakYes").onclick=()=>{chimeUnlock();showConfirm(false);S={phase:"break",elapsed:0,startedAt:Date.now(),fast:S.fast};lastStep=0;save();render()};
+$("breakYes").onclick=()=>{chimeUnlock();showConfirm(false);startBreak()};
 $("breakNo").onclick=()=>{showConfirm(false);$("startBtn").click()};
 $("fastMode").onchange=e=>{S.fast=e.target.checked;save();render()};
 
@@ -767,7 +851,7 @@ const hm=m=>m>=60?`${Math.floor(m/60)} h ${m%60?m%60+" min":""}`.trim():`${m} mi
 function statHTML(kind){
   const arr=last7();
   if(kind==="mins"){
-    const v=arr.map(a=>a[1].length*25),tot=v.reduce((a,b)=>a+b,0),max=Math.max(100,...v);
+    const v=arr.map(a=>minsFor(dayKey(a[0]))),tot=v.reduce((a,b)=>a+b,0),max=Math.max(100,...v);
     let g=`<path d="M6,122 H314" stroke="var(--pencil)" stroke-width="1.4" fill="none"/>`;
     [max/2,max].forEach(t=>{const y=122-t/max*96;g+=`<path d="M6,${y} H314" stroke="#c9d2f5" stroke-width="1" stroke-dasharray="2 4" fill="none" data-raw/><text x="8" y="${y-3}" font-family="JetBrains Mono,monospace" font-size="8" fill="#5563a8">${Math.round(t)} min</text>`});
     arr.forEach(([d],i)=>{const cx=38+i*42,h=v[i]/max*96,today=i===6;
@@ -782,7 +866,7 @@ function statHTML(kind){
     const bestTxt=best&&best[1]?new Date(best[0]+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}):"not yet";
     const hits=arr.filter(([d,l])=>goals[dayKey(d)]&&l.length>=goals[dayKey(d)]).length;
     return `<div class="sp-head"><div class="sp-titles"><h3 id="spTitle">Your momo count</h3></div><button type="button" class="sp-x" aria-label="Close">×</button></div>
-      <div class="tiles"><div class="tile">${TILEICON.cab}<span>All time</span><b>${all}</b><em>${hm(all*25)} focused</em></div>
+      <div class="tiles"><div class="tile">${TILEICON.cab}<span>All time</span><b>${all}</b><em>${hm(Object.keys(days).reduce((a,k)=>a+minsFor(k),0))} focused</em></div>
       <div class="tile">${TILEICON.car}<span>This week</span><b>${wk}</b><em>${wk?Math.round(wk/7*10)/10+" a day":"none yet"}</em></div>
       <div class="tile">${TILEICON.crn}<span>Best day</span><b>${best?best[1]:0}</b><em>${bestTxt}</em></div>
       <div class="tile">${TILEICON.chl}<span>Streak</span><b>${streak()}</b><em>days in a row · ${hits} goal${hits===1?"":"s"} hit</em></div></div>`;
@@ -810,6 +894,27 @@ function renderCustom(){
   document.querySelectorAll(".seg svg").forEach(v=>sketchify(v));
 }
 renderCustom();drawStickers();renderGoals();
+function saveSet(){store.set("momodoro:settings",SET);renderSettings();render()}
+function matchScheme(){const k=Object.keys(SCHEMES).find(k=>SCHEMES[k].v.join()===[SET.focus,SET.short,SET.long,SET.every].join());SET.scheme=k||"custom"}
+function renderSettings(){
+  const cur=[SET.focus,SET.short,SET.long,SET.every];
+  $("schemes").innerHTML=Object.entries(SCHEMES).map(([k,v])=>`<button type="button" role="radio" data-k="${k}" aria-checked="${SET.scheme===k}"><span>${v.name}</span><small>${v.v.join(" · ")}</small></button>`).join("")+`<button type="button" role="radio" data-k="custom" aria-checked="${SET.scheme==="custom"}" ${SET.scheme==="custom"?"":"disabled"}><span>Custom</span><small>${SET.scheme==="custom"?cur.join(" · "):"edit below"}</small></button>`;
+  $("schemes").querySelectorAll("button").forEach(b=>b.onclick=()=>{const sc=SCHEMES[b.dataset.k];if(!sc)return;[SET.focus,SET.short,SET.long,SET.every]=sc.v;SET.scheme=b.dataset.k;saveSet()});
+  ["focus","short","long","every"].forEach(k=>{if(document.activeElement!==$("set_"+k))$("set_"+k).value=SET[k]});
+  ["autoMomo","autoBreak","sound"].forEach(k=>$("set_"+k).checked=!!SET[k]);
+}
+function setVal(k,v){const [lo,hi]=LIMITS[k];v=Math.round(+v);if(!isFinite(v))v=SET[k];SET[k]=Math.min(hi,Math.max(lo,v));matchScheme();saveSet()}
+document.querySelectorAll(".stepper").forEach(st=>{const k=st.dataset.k;
+  st.querySelectorAll("button").forEach(b=>b.onclick=()=>setVal(k,SET[k]+(+b.dataset.d)));
+  const inp=st.querySelector("input");inp.min=LIMITS[k][0];inp.max=LIMITS[k][1];
+  inp.addEventListener("change",()=>{setVal(k,inp.value);inp.value=SET[k]});});
+["autoMomo","autoBreak","sound"].forEach(k=>$("set_"+k).onchange=e=>{SET[k]=e.target.checked;saveSet()});
+function showTab(which){const set=which==="settings";$("viewKitchen").hidden=set;$("viewSettings").hidden=!set;
+  $("tabKitchen").setAttribute("aria-selected",!set);$("tabSettings").setAttribute("aria-selected",set);try{sessionStorage.setItem("momodoro:tab",which)}catch(e){}}
+$("tabKitchen").onclick=()=>showTab("kitchen");$("tabSettings").onclick=()=>showTab("settings");
+document.querySelector(".tabs").addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const s=$("tabSettings").getAttribute("aria-selected")==="true";showTab(s?"kitchen":"settings");(s?$("tabKitchen"):$("tabSettings")).focus()}});
+renderSettings();
+try{if(sessionStorage.getItem("momodoro:tab")==="settings")showTab("settings")}catch(e){}
 let showSteps=store.get("momodoro:showSteps",false);
 function applySteps(){$("stepsBox").hidden=!showSteps;$("stepsBtn").setAttribute("aria-expanded",showSteps);$("stepsBtn").querySelector("span").textContent=showSteps?"Hide steps":"Show steps"}
 $("stepsBtn").onclick=()=>{showSteps=!showSteps;store.set("momodoro:showSteps",showSteps);applySteps()};applySteps();
